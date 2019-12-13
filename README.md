@@ -14,6 +14,7 @@ Use with care
 
 - Download this project, have python3 installed on your computer.
 - Install selenium
+- Install BeautifullSoup4
 - Downlad and install the chrome webdriver (TODO: make available for other drivers)
 
 ## Usage
@@ -23,8 +24,8 @@ Use with care
 
 ## Support
 
-Please [open an issue](https://github.com/{url}/issues/new) for support.
+Please [open an issue](https://github.com/carlosloureda/udacity-mentor-scrapper/issues/new) for support.
 
 ## Contributing
 
-Please contribute using [Github Flow](https://guides.github.com/introduction/flow/). Create a branch, add commits, and [open a pull request](https://github.com/{url}/compare/).
+Please contribute using [Github Flow](https://guides.github.com/introduction/flow/). Create a branch, add commits, and [open a pull request](https://github.com/carlosloureda/udacity-mentor-scrapper/compare/).

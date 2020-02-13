@@ -1,0 +1,184 @@
+{
+  "2": {
+    "day": 2,
+    "lesson": "Why React",
+    "module": "React Fundamentals",
+    "resources": [],
+    "messages": []
+  },
+  "4": {
+    "day": 4,
+    "lesson": "Rendering UI with React",
+    "module": "React Fundamentals",
+    "resources": [],
+    "messages": []
+  },
+  "7": {
+    "day": 7,
+    "lesson": "State Management",
+    "module": "React Fundamentals",
+    "resources": [],
+    "messages": []
+  },
+  "9": {
+    "day": 9,
+    "lesson": "Lifecycle Events",
+    "module": "React Fundamentals",
+    "resources": [],
+    "messages": []
+  },
+  "12": {
+    "day": 12,
+    "lesson": "React Router",
+    "module": "React Fundamentals",
+    "resources": [],
+    "messages": []
+  },
+  "13": {
+    "day": 13,
+    "lesson": "Begin Project 1 (myReads)",
+    "module": "React Fundamentals",
+    "resources": [],
+    "messages": []
+  },
+  "20": {
+    "day": 13,
+    "lesson": "Due Date Project 1 (myReads)",
+    "module": "React Fundamentals",
+    "resources": [],
+    "messages": []
+  },
+  "21": {
+    "day": 21,
+    "lesson": "Managing State",
+    "module": "Redux",
+    "resources": [],
+    "messages": []
+  },
+  "23": {
+    "day": 23,
+    "lesson": "UI + Redux",
+    "module": "Redux",
+    "resources": [],
+    "messages": []
+  },
+  "26": {
+    "day": 26,
+    "lesson": "Redux Middleware",
+    "module": "Redux",
+    "resources": [],
+    "messages": []
+  },
+  "29": {
+    "day": 29,
+    "lesson": "Redux with React",
+    "module": "Redux",
+    "resources": [],
+    "messages": []
+  },
+  "32": {
+    "day": 32,
+    "lesson": "Asynchronous Redux",
+    "module": "Redux",
+    "resources": [],
+    "messages": []
+  },
+  "35": {
+    "day": 35,
+    "lesson": "react-redux",
+    "module": "Redux",
+    "resources": [],
+    "messages": []
+  },
+  "37": {
+    "day": 37,
+    "lesson": "Real world Redux",
+    "module": "Redux",
+    "resources": [],
+    "messages": []
+  },
+  "45": {
+    "day": 45,
+    "lesson": "Begin Project #2 (WYR)",
+    "module": "Redux",
+    "resources": [],
+    "messages": []
+  },
+  "78": {
+    "day": 78,
+    "lesson": "Due Date for Project #2 (WYR)",
+    "module": "Redux",
+    "resources": [],
+    "messages": []
+  },
+  "79": {
+    "day": 79,
+    "lesson": "Up & Running with React Native",
+    "module": "React Native",
+    "resources": [],
+    "messages": []
+  },
+
+  "82": {
+    "day": 82,
+    "lesson": "React vs React Native",
+    "module": "React Native",
+    "resources": [],
+    "messages": []
+  },
+
+  "85": {
+    "day": 85,
+    "lesson": "Styling & Layout",
+    "module": "React Native",
+    "resources": [],
+    "messages": []
+  },
+
+  "88": {
+    "day": 88,
+    "lesson": "Navigation",
+    "module": "React Native",
+    "resources": [],
+    "messages": []
+  },
+
+  "90": {
+    "day": 90,
+    "lesson": "Native Features",
+    "module": "React Native",
+    "resources": [],
+    "messages": []
+  },
+
+  "92": {
+    "day": 92,
+    "lesson": "Begin Project3 (Flashcards)",
+    "module": "React Native",
+    "resources": [],
+    "messages": []
+  },
+
+  "106": {
+    "day": 106,
+    "lesson": " Due date for Project #3 (Flashcards)",
+    "module": "React Native",
+    "resources": [],
+    "messages": []
+  },
+
+  "108": {
+    "day": 108,
+    "lesson": " Extra project ?",
+    "module": "React Native",
+    "resources": [],
+    "messages": []
+  },
+  "120": {
+    "day": 120,
+    "lesson": " Course ends",
+    "module": "React Native",
+    "resources": [],
+    "messages": []
+  }
+}

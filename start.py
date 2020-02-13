@@ -1,11 +1,13 @@
+import sys
+import os
+from bs4 import BeautifulSoup
+from datetime import datetime
+import time
+import json
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
-import json
-import time
-from datetime import datetime
-from bs4 import BeautifulSoup
-
+from operator import itemgetter
 # TODO: Let's think on how to do this dynamic
 
 PROGRAM_INFO = {
@@ -16,16 +18,19 @@ PROGRAM_INFO = {
 }
 PROGRAM = "REACT"
 
+CURRENT_PATH = os.path.dirname(sys.argv[0])
+
 
 def get_credentials():
-    with open("./credentials.json") as json_data_file:
+    with open(f'./credentials.json') as json_data_file:
         return json.load(json_data_file)
     return None
 
 
 def init_selenium():
-    webdriver_name = "chromedriver"
-    driver = webdriver.Chrome(webdriver_name)
+    webdriver_name = f'{CURRENT_PATH}/chromedriver'
+    driver = webdriver.Chrome("./chromedriver")
+    # driver = webdriver.Chrome(executable_path=f'{CURRENT_PATH}/chromedriver')
     return driver
 
 
@@ -62,6 +67,9 @@ def get_students_info_from_dashboard(driver):
     for student_row in all_rows:
         columns = student_row.find_all('td')
         students.append(list(map((lambda column: column.text), columns)))
+    students = sorted(
+        students, key=lambda x: datetime.strptime(
+            x[POSITIONS["FIRST_PAYMENT"]],  '%b %d, %Y'), reverse=True)
     return students
 
 
@@ -76,6 +84,8 @@ POSITIONS = {
     "LESSONS_COMPLETED": 4,
     "PROJECTS_COMPLETED": 5,
     "ACTIONS": 6
+
+
 }
 
 
@@ -163,6 +173,54 @@ def main():
         names = get_students_names(first_week)
         print(
             f'## You have {len(first_week)} students on their first week: ', names)
+
+    # get detailled info for each student (by recommended dates . . . )
+    get_detailled_info(students)
+
+
+def get_previous_day(day, info_dict):
+    while str(day) not in info_dict and day > 0:
+        day -= 1
+    return day
+
+
+def get_next_day(day, info_dict):
+    while str(day) not in info_dict and day < 121:
+        day += 1
+    return day
+
+
+def get_detailled_info(students):
+    today = datetime.now()
+    """ Filters the students by the maximum {days_off}  since their initial date at udacity"""
+    students_info = []
+    json_file = open('./api/recommended_dates.json')
+    data = json.load(json_file)
+    for student in students:
+        first_payment_date = parse_date_from_dashboard(
+            student[POSITIONS["FIRST_PAYMENT"]])
+        diff = today - first_payment_date
+        days = diff.days
+        message = f'--> {student[POSITIONS["STUDENT"]]} is on his/her {days} day on enrollment'
+        # print(data)
+        if days > 120 or days < 1:
+            message += f'. He exceeded the 4 months so no much info here . . .'
+        elif str(days) in data:
+            message += f'. He should be studying lesson {data[str(days)]["lesson"]}'
+        else:
+            prev_day = get_previous_day(days, data)
+            next_day = get_next_day(days, data)
+            if prev_day < 1 or prev_day > 120:
+                message += f'. ERROR ON PREVIOUS DAY: {prev_day}'
+            else:
+                message += f'. Previous lesson is {data[str(prev_day)]["lesson"]}'
+            if next_day < 1 or next_day > 120:
+                message += f'. ERROR ON NEXT DAY: {next_day}'
+            else:
+                message += f'. Next lesson is {data[str(next_day)]["lesson"]}'
+        print(message)
+        # students_info.append({})
+    return students_info
 
 
 main()

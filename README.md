@@ -14,8 +14,9 @@ Use with care
 
 - Download this project, have python3 installed on your computer.
 - Install selenium
-- Install BeautifullSoup4
+- Install BeautifulSoup4: pip3 install beautifulsoup4
 - Downlad and install the chrome webdriver (TODO: make available for other drivers)
+- pip3 install html5lib
 
 ## Usage
 
